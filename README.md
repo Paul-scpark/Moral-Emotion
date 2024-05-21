@@ -17,18 +17,23 @@ Predictive margins for general support (depicted by a red line) and active suppo
 We collected petition data from [the Korean government archive](http://webarchives.pa.go.kr/19th/www.president.go.kr/petitions/) and [the UK Government and Parliament Petition website](https://petition.parliament.uk/).
 
 ### 1. Human Annotation Dataset
-- ![Korean](https://github.com/Paul-scpark/Moral-Emotions-Political-Participation/blob/main/data/KOR_Human_Annotation_640.parquet) (Train: 300 / Test: 340)
-- ![English](https://github.com/Paul-scpark/Moral-Emotions-Political-Participation/blob/main/data/ENG_Human_Annotation_640.parquet) (Train: 300 / Test: 340)
+- Korean (Train: 300 / Test: 340)
+- English (Train: 300 / Test: 340)
+- Columns: Question, Label, Label_Type, Dataset
 
+### 2. Moral Emotion Dataset
+- Korean (49,930)
+- English (49,896)
+- Columns: Question, Label, Label_Type
+
+### < Human Annotation / Moral Emotion Dataset Sample >
 |   | Question | Label | Label_Type | Dataset |
 |---|----------------------------------------------------------------------------------------|------------------------------------|------------|---------|
 | 0 | Because it’s amazing what they are doing words can’t describe what a fantastic job they are doing and they deserve all the recognition they’re getting and I know you agree with me! | Other-Praising | Single | Train |
 | 1 | Stop putting us victims in danger.Abusers work way to quickly and smartly now and there’s too many ways they get around the current law as it stands.Make restraining orders and domestic sentences public knowledge. | Other-Condemning, Other-Suffering | Multi | Train |
 | 2 | Trafalgar Square has always been where Britain's war heroes are honoured with statues. | Neutral | Single | Test |
 | 3 | Many health care workers are working without adequate PPE due to underfunding of the NHS making them ill-equipped to handle the COVID-19 crisis. | Other-Condemning, Other-Suffering | Multi | Test |
-
-### 2. Moral Emotion Dataset
-
+  
 ## Setup
 
 ## Citation

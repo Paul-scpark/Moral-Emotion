@@ -14,16 +14,16 @@ Method overview. We propose a full framework for constructing data, modeling cla
 Predictive margins for general support (depicted by a red line) and active support (blue line) across five emotions in studied countries, with 95% confidence intervals.
 
 ## Data
-We collected petition data from [the Korean government archive](http://webarchives.pa.go.kr/19th/www.president.go.kr/petitions/) and [the UK Government and Parliament Petition website](https://petition.parliament.uk/).
+We collected data from government-led petition platforms from [the Korean government archive](http://webarchives.pa.go.kr/19th/www.president.go.kr/petitions/) and [the UK Government and Parliament Petition website](https://petition.parliament.uk/).
 
 ### 1. Human Annotation Dataset
-- Korean (Train: 300 / Test: 340)
-- English (Train: 300 / Test: 340)
+- [Korean](https://github.com/Paul-scpark/Moral-Emotions-Political-Participation/blob/main/data/KOR_Human_Annotation_Dataset.parquet) (Train: 300 / Test: 340)
+- [English](https://github.com/Paul-scpark/Moral-Emotions-Political-Participation/blob/main/data/ENG_Human_Annotation_Dataset.parquet) (Train: 300 / Test: 340)
 - Columns: Question, Label, Label_Type, Dataset
 
 ### 2. Moral Emotion Dataset
-- Korean (49,930)
-- English (49,896)
+- [Korean](https://github.com/Paul-scpark/Moral-Emotions-Political-Participation/blob/main/data/KOR_Moral_Emotion_Dataset.parquet) (49,930)
+- [English](https://github.com/Paul-scpark/Moral-Emotions-Political-Participation/blob/main/data/ENG_Moral_Emotion_Dataset.parquet) (49,896)
 - Columns: Question, Label, Label_Type
 
 ### < Human Annotation / Moral Emotion Dataset Sample >

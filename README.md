@@ -1,6 +1,6 @@
 # How Do Moral Emotions Shape Political Participation? A Cross-Cultural Analysis of Online Petitions Using Language Models
 
-This repository contains data for the ACL 2024 paper, [How Do Moral Emotions Shape Political Participation? A Cross-Cultural Analysis of Online Petitions Using Language Models](https://openreview.net/pdf?id=b3AoAk60mL).
+This repository contains data and model for the ACL 2024 paper, [How Do Moral Emotions Shape Political Participation? A Cross-Cultural Analysis of Online Petitions Using Language Models](https://openreview.net/pdf?id=b3AoAk60mL).
 
 ## Abstract
 Understanding the interplay between emotions in language and user behaviors is critical. We study how moral emotions shape political participation of users based on cross-cultural online petition data. To quantify moral emotions, we employ a context-aware NLP model that is designed to capture the subtle nuances of emotions across cultures. For model training, we construct and share a moral emotion dataset comprising 50,000 petition sentences in Korean and English along with emotion labels annotated by a fine-tuned LLM. We examine two distinct types of user participation: general support (i.e., registered signatures of petitions) and active support (i.e., sharing petitions on social media). We discover that moral emotions like other-suffering increase both forms of participation and help petitions go viral, while self-conscious have the opposite effect. The most prominent moral emotion, other-condemning, led to polarizing responses among the audience. In contrast, other-praising was perceived differently by culture; it led to a rise in active support in Korea but a decline in the UK. Our findings suggest that both moral emotions embedded in language and cultural perceptions are critical in engaging the public in political discourse.
@@ -17,24 +17,36 @@ Predictive margins for general support (depicted by a red line) and active suppo
 We collected data from government-led petition platforms from [the Korean government archive](http://webarchives.pa.go.kr/19th/www.president.go.kr/petitions/) and [the UK Government and Parliament Petition website](https://petition.parliament.uk/).
 
 ### 1. Human Annotation Dataset
-- [Korean](https://github.com/Paul-scpark/Moral-Emotions-Political-Participation/blob/main/data/KOR_Human_Annotation_Dataset.parquet) (Train: 300 / Test: 340)
-- [English](https://github.com/Paul-scpark/Moral-Emotions-Political-Participation/blob/main/data/ENG_Human_Annotation_Dataset.parquet) (Train: 300 / Test: 340)
-- Columns: Question, Label, Label_Type, Dataset
+- [Korean](https://github.com/Paul-scpark/Moral-Emotions-Political-Participation/blob/main/data/KOR_Human_Annotation_Dataset.parquet)
+- [English](https://github.com/Paul-scpark/Moral-Emotions-Political-Participation/blob/main/data/ENG_Human_Annotation_Dataset.parquet)
+- Columns: Question, User1, User2, User3, User4, User5
+- NA data is a response of 'Hard to tell'
+
+### < Human Annotation Dataset Sample >
+|   | Question | User1 | User2 | User3 | User4 | User5 |
+|---|----------|-------|-------|-------|-------|-------|
+| 0 | Use the minstrel code to have them removed from office! | Other-condemning | Other-condemning | Other-condemning | Other-condemning | Other-condemning |
+| 1 | Martin Lewis has made a fantastic contribution to educating the people of Britain on how to manage their finances. | Other-praising | Other-praising | Other-praising | Other-praising | Other-praising |
+| 2 | The UK government should actively respond and allow Ukrainian refugees into the country and potentially even facilitate transport of the vulnerable, elderly and children, into the country. | Other-suffering | Other-suffering | Other-suffering | Other-suffering | Other-suffering |
+| 3 | Because today I feel embarrassed to be a nurse. | Self-conscious | Self-conscious | Self-conscious | Self-conscious | Self-conscious |
+| 4 | Instead of going dark at 5.15pm it would be 6.15pm. | Neutral | Neutral | Neutral | Neutral | Neutral |
+| 5 | I am afraid that I will catch coronavirus from one of them. | Non-moral-emotion | Non-moral-emotion | Non-moral-emotion | Non-moral-emotion | Non-moral-emotion |
 
 ### 2. Moral Emotion Dataset
 - [Korean](https://github.com/Paul-scpark/Moral-Emotions-Political-Participation/blob/main/data/KOR_Moral_Emotion_Dataset.parquet) (49,930)
 - [English](https://github.com/Paul-scpark/Moral-Emotions-Political-Participation/blob/main/data/ENG_Moral_Emotion_Dataset.parquet) (49,896)
 - Columns: Question, Label, Label_Type
 
-### < Human Annotation / Moral Emotion Dataset Sample >
-|   | Question | Label | Label_Type | Dataset |
-|---|----------------------------------------------------------------------------------------|------------------------------------|------------|---------|
-| 0 | Because it’s amazing what they are doing words can’t describe what a fantastic job they are doing and they deserve all the recognition they’re getting and I know you agree with me! | Other-Praising | Single | Train |
-| 1 | Stop putting us victims in danger.Abusers work way to quickly and smartly now and there’s too many ways they get around the current law as it stands.Make restraining orders and domestic sentences public knowledge. | Other-Condemning, Other-Suffering | Multi | Train |
-| 2 | Trafalgar Square has always been where Britain's war heroes are honoured with statues. | Neutral | Single | Test |
-| 3 | Many health care workers are working without adequate PPE due to underfunding of the NHS making them ill-equipped to handle the COVID-19 crisis. | Other-Condemning, Other-Suffering | Multi | Test |
+### < Moral Emotion Dataset Sample >
+|   | Text | Label | Label_Type |
+|---|----------------------------------------------------------------------------------------|------------------------------------|------------|
+| 0 | Because it’s amazing what they are doing words can’t describe what a fantastic job they are doing and they deserve all the recognition they’re getting and I know you agree with me! | Other-praising | Single |
+| 1 | Stop putting us victims in danger.Abusers work way to quickly and smartly now and there’s too many ways they get around the current law as it stands.Make restraining orders and domestic sentences public knowledge. | Other-condemning, Other-suffering | Multi |
+| 2 | Trafalgar Square has always been where Britain's war heroes are honoured with statues. | Neutral | Single |
+| 3 | Many health care workers are working without adequate PPE due to underfunding of the NHS making them ill-equipped to handle the COVID-19 crisis. | Other-condemning, Other-suffering | Multi |
   
-## Setup
+## Model
+WIP
 
 ## Citation
 ```

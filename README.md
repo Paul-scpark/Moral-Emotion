@@ -46,7 +46,14 @@ We collected data from government-led petition platforms from [the Korean govern
 | 3 | Many health care workers are working without adequate PPE due to underfunding of the NHS making them ill-equipped to handle the COVID-19 crisis. | Other-condemning, Other-suffering | Multi |
   
 ## Model
-WIP
+- Korean
+  - [BERT](https://huggingface.co/Chaeyoon/BERT-Moral-Emotion-KOR)
+  - [RoBERTa](https://huggingface.co/Chaeyoon/RoBERTa-Moral-Emotion-KOR)
+  - [ELECTRA](https://huggingface.co/Chaeyoon/ELECTRA-Moral-Emotion-KOR)
+- English
+  - [BERT](https://huggingface.co/Chaeyoon/BERT-Moral-Emotion-ENG)
+  - [RoBERTa](https://huggingface.co/Chaeyoon/RoBERTa-Moral-Emotion-ENG)
+  - [ELECTRA](https://huggingface.co/Chaeyoon/ELECTRA-Moral-Emotion-ENG)
 
 ## Citation
 ```

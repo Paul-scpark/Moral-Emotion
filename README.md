@@ -46,6 +46,29 @@ We collected data from government-led petition platforms from [the Korean govern
 | 3 | Many health care workers are working without adequate PPE due to underfunding of the NHS making them ill-equipped to handle the COVID-19 crisis. | Other-condemning, Other-suffering | Multi |
   
 ## Model
+```python
+# Detail Example: https://github.com/Paul-scpark/Moral-Emotion/blob/main/model_inference.py
+import pandas as pd
+import numpy as np
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
+
+def inference_single_model(df, model_name):
+    pipe = pipeline("text-classification", model=model_name, top_k=None)
+    results = pipe(df['Question'].tolist())
+    output_df = pd.DataFrame([{item['label']: item['score'] for item in row} for row in results])
+    
+    return output_df
+
+''' 'output_df' shape
+| Non-Moral-Emotion | Neutral | Other-Suffering | Other-Praising | Other-Condemning | Self-Conscious |
+|-------------------|---------|-----------------|----------------|------------------|----------------|
+| 0.621278          | 0.389092| 0.026186        | 0.022388       | 0.018874         | 0.004896       |
+| 0.612030          | 0.390416| 0.027614        | 0.022423       | 0.019170         | 0.004669       |
+| 0.554191          | 0.386037| 0.036295        | 0.021075       | 0.022980         | 0.003603       |
+| 0.681116          | 0.312530| 0.023661        | 0.017224       | 0.020274         | 0.004694       |
+| 0.547903          | 0.446682| 0.030198        | 0.020471       | 0.018342         | 0.004556       |
+'''
+```
 - Korean
   - [BERT](https://huggingface.co/Chaeyoon/BERT-Moral-Emotion-KOR)
   - [RoBERTa](https://huggingface.co/Chaeyoon/RoBERTa-Moral-Emotion-KOR)

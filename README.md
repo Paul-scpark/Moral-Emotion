@@ -84,7 +84,9 @@ def inference_single_model(df, model_name):
   kim-etal-2024-moral-emotions,
   title={How {D}o {M}oral {E}motions {S}hape {P}olitical {P}articipation? {A} {C}ross-{C}ultural {A}nalysis of {O}nline {P}etitions {U}sing {L}anguage {M}odels},
   author={Kim, Jaehong and Jeong, Chaeyoon and Park, Seongchan and Cha, Meeyoung and Lee, Wonjae},
-  booktitle={The 62nd Annual Meeting of the Association for Computational Linguistics},
-  year={2024}
+  booktitle={Findings of the Association for Computational Linguistics ACL 2024},
+  year={2024},
+  url={https://aclanthology.org/2024.findings-acl.963},
+  pages={16274--16289}
 }
 ```
